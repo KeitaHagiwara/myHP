@@ -1,6 +1,9 @@
 import styles from "./page.module.css";
 import Image from "next/image";
-import { getNewsList } from "@/app/_libs/microcms";
+import TitleFrame from "@/app/_components/TitleFrame";
+import CompanyOverview from "@/app/_components/CompanyOverview";
+
+// import { getNewsList } from "@/app/_libs/microcms";
 // import { TOP_NEWS_LIMIT } from "@/app/_constants";
 
 // import NewsList from "@/app/_components/NewsList";
@@ -31,7 +34,7 @@ export default async function Home() {
       </section>
       <section className={styles.news}>
         <div className={styles.container}>
-          <h2 className={styles.newsTitle}>ごあいさつ</h2>
+          <TitleFrame title="ご挨拶"/>
           <p>test</p>
           {/* <NewsList news={data.contents} />
           <div className={styles.newsLink}>
@@ -40,18 +43,18 @@ export default async function Home() {
         </div>
 
         <div className={styles.container}>
-          <h2 className={styles.newsTitle}>ミッション</h2>
+          <TitleFrame title="Mission" />
           <div>test</div>
         </div>
 
         <div className={styles.container}>
-          <h2 className={styles.newsTitle}>価値</h2>
+          <TitleFrame title="Value" />
           <div>test</div>
         </div>
 
         <div className={styles.container}>
-          <h2 className={styles.newsTitle}>会社概要</h2>
-          <div>test</div>
+          <TitleFrame title="会社概要" />
+          <CompanyOverview />
         </div>
 
       </section>
