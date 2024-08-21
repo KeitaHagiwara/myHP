@@ -12,13 +12,6 @@ export type Business = {
     image_path: string;
 }
 
-export type Member = {
-    name: string;
-    position: string;
-    profile: string;
-    image: MicroCMSImage;
-} & MicroCMSListContent;
-
 export type Portfolio = {
     serviceName: string;
     description: string;
@@ -59,14 +52,6 @@ const client = createClient({
 export const getPortfolioList = async (queries?: MicroCMSQueries) => {
     const listData = await client.getList<Portfolio>({
         endpoint: "portfolio",
-        queries,
-    });
-    return listData;
-};
-
-export const getMembersList = async (queries?: MicroCMSQueries) => {
-    const listData = await client.getList<Member>({
-        endpoint: "members",
         queries,
     });
     return listData;
