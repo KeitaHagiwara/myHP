@@ -34,6 +34,9 @@
   z-index: -1;
 }
 
+.container {
+  margin-bottom: 40px;
+}
 .news {
   position: relative;
   background-color: #fff;

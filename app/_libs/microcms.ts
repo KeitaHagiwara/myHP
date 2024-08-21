@@ -5,11 +5,28 @@ import type {
     MicroCMSListContent,
 } from "microcms-js-sdk";
 
+export type Business = {
+    id: string;
+    name: string;
+    contents: string;
+    image_path: string;
+}
+
 export type Member = {
     name: string;
     position: string;
     profile: string;
     image: MicroCMSImage;
+} & MicroCMSListContent;
+
+export type Portfolio = {
+    serviceName: string;
+    description: string;
+    contents: string;
+    thumbnail?: MicroCMSImage;
+    url?: string;
+    startedAt: string;
+    terms?: string;
 } & MicroCMSListContent;
 
 export type Category = {
@@ -38,6 +55,14 @@ const client = createClient({
     serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN,
     apiKey: process.env.MICROCMS_API_KEY,
 })
+
+export const getPortfolioList = async (queries?: MicroCMSQueries) => {
+    const listData = await client.getList<Portfolio>({
+        endpoint: "portfolio",
+        queries,
+    });
+    return listData;
+};
 
 export const getMembersList = async (queries?: MicroCMSQueries) => {
     const listData = await client.getList<Member>({

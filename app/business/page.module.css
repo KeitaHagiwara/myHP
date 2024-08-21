@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.frame {
+    border-radius: 10px;
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .1);
+    width: calc(100% - 32px);
+    margin: 10px;
+    padding: 20px;
+}
+.title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: dodgerblue;
+}
+.contents{
+    font-size: 14px;
+    border: 3px dashed lightgrey;
+    padding: 10px;
+}
+
+.image_container {
+    text-align: center;
+    /* margin: auto; */
+}
+
+.image {
+    width: auto;
+    height: 200px;
+    border-radius: var(--border-radius);
+    margin: 30px 0px;
+}
+
+@media (max-width: 640px) {
+    .container {
+        display: block;
+    }
+}

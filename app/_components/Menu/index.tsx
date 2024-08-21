@@ -17,11 +17,20 @@ export default function Menu() {
       <nav className={cx(styles.nav, isOpen && styles.open)}>
         <ul className={styles.items}>
           <li>
-            <Link href="/news">ニュース</Link>
+            <Link href="/">トップ</Link>
           </li>
           <li>
-            <Link href="/members">メンバー</Link>
+            <Link href="/business">事業内容</Link>
           </li>
+          <li>
+            <Link href="/portfolio">ポートフォリオ</Link>
+          </li>
+          <li>
+            <Link href="/news">ニュース</Link>
+          </li>
+          {/* <li>
+            <Link href="/members">メンバー</Link>
+          </li> */}
           <li>
             <Link href="/contact">お問い合わせ</Link>
           </li>

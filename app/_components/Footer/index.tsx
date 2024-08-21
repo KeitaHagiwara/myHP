@@ -6,18 +6,27 @@ export default function Footer() {
     <footer className={styles.footer}>
       <nav className={styles.nav}>
         <ul className={styles.items}>
+        <li className={styles.item}>
+            <Link href="/">トップ</Link>
+          </li>
+          <li className={styles.item}>
+            <Link href="/business">事業内容</Link>
+          </li>
+          <li className={styles.item}>
+            <Link href="/portfolio">ポートフォリオ</Link>
+          </li>
           <li className={styles.item}>
             <Link href="/news">ニュース</Link>
           </li>
-          <li className={styles.item}>
+          {/* <li className={styles.item}>
             <Link href="/members">メンバー</Link>
-          </li>
+          </li> */}
           <li className={styles.item}>
             <Link href="/contact">お問い合わせ</Link>
           </li>
         </ul>
       </nav>
-      <p className={styles.cr}>©︎ SIMPLE. All Rights Reserved 2024</p>
+      <p className={styles.cr}>©︎ FIRST PENGUIN. All Rights Reserved 2024</p>
     </footer>
   );
 }
