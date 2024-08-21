@@ -35,7 +35,7 @@ export default async function Home() {
       <section className={styles.news}>
         <div className={styles.container}>
           <TitleFrame title="ご挨拶"/>
-          <p>test</p>
+          <p>現在、作成中です。</p>
           {/* <NewsList news={data.contents} />
           <div className={styles.newsLink}>
             <ButtonLink href="/news">もっとみる</ButtonLink>
@@ -44,12 +44,12 @@ export default async function Home() {
 
         <div className={styles.container}>
           <TitleFrame title="Mission" />
-          <div>test</div>
+          <p>現在、作成中です。</p>
         </div>
 
         <div className={styles.container}>
           <TitleFrame title="Value" />
-          <div>test</div>
+          <p>現在、作成中です。</p>
         </div>
 
         <div className={styles.container}>

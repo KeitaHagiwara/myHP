@@ -47,7 +47,8 @@ export default function TitleFrame() {
           <tr className={styles.tr}>
             <th className={styles.th}>連絡先</th>
             <td className={styles.td}>
-              <Link href="/contact" className={styles.link}>お問い合わせページ</Link>からご連絡ください</td>
+              <Link href="/contact" className={styles.link}>お問い合わせページ</Link>からご連絡ください
+            </td>
           </tr>
         </tbody>
       </table>
