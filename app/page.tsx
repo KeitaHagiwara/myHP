@@ -42,10 +42,10 @@ export default async function Home() {
           </div> */}
         </div>
 
-        <div className={styles.container}>
+        {/* <div className={styles.container}>
           <TitleFrame title="Mission" />
           <p>現在、作成中です。</p>
-        </div>
+        </div> */}
 
         <div className={styles.container}>
           <TitleFrame title="Value" />

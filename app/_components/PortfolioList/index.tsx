@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import DateCareer from "@/app/_components/DateCareer";
+
 import styles from "./index.module.css";
-import Category from "../Category";
 import { Portfolio } from "@/app/_libs/microcms";
 import { formatDate } from "@/app/_libs/utils";
 
@@ -16,16 +17,16 @@ export default function PortfolioList({ portfolio }: Props) {
   }
   return (
     <ul>
-      {portfolio.map((service) => (
-        <li key={service.id} className={styles.list}>
-          <Link href={`/news/${service.id}`} className={styles.link}>
-            {service.thumbnail ? (
+      {portfolio.map((portfolio) => (
+        <li key={portfolio.id} className={styles.list}>
+          <Link href={`/portfolio/${portfolio.id}`} className={styles.link}>
+            {portfolio.thumbnail ? (
               <Image
                 className={styles.image}
-                src={service.thumbnail.url}
+                src={portfolio.thumbnail.url}
                 alt=""
-                width={service.thumbnail.width}
-                height={service.thumbnail.height}
+                width={portfolio.thumbnail.width}
+                height={portfolio.thumbnail.height}
               />
             ) : (
               <Image
@@ -37,13 +38,10 @@ export default function PortfolioList({ portfolio }: Props) {
               />
             )}
             <dl className={styles.content}>
-              <dt className={styles.service_name}>{service.serviceName}</dt>
-              <dt className={styles.description}>{service.description}</dt>
+              <dt className={styles.service_name}>{portfolio.serviceName}</dt>
+              <dt className={styles.description}>{portfolio.description}</dt>
               <dd className={styles.meta}>
-                <p>開始時期：{ formatDate(`${service.startedAt}`) }</p>
-                { service.terms !== undefined ? (
-                  <p>開発期間：{service.terms}</p>
-                ) : (<></>)}
+                <DateCareer startedAt={portfolio.startedAt} terms={portfolio.terms} />
               </dd>
             </dl>
           </Link>

@@ -13,9 +13,10 @@ export type Business = {
 }
 
 export type Portfolio = {
+    id: string;
     serviceName: string;
     description: string;
-    contents: string;
+    content: string;
     thumbnail?: MicroCMSImage;
     url?: string;
     startedAt: string;
@@ -55,6 +56,20 @@ export const getPortfolioList = async (queries?: MicroCMSQueries) => {
         queries,
     });
     return listData;
+};
+
+export const getPortfolioDetail = async (contentId: string, queries?: MicroCMSQueries) => {
+    const detailData = await client.getListDetail<Portfolio>({
+        endpoint: "portfolio",
+        contentId: contentId,
+        queries,
+        customRequestInit: {
+            next: {
+                revalidate: queries?.draftKey === undefined ? 60 : 0,
+            },
+        },
+    });
+    return detailData;
 };
 
 export const getNewsList = async (queries?: MicroCMSQueries) => {
