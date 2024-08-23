@@ -23,17 +23,12 @@ export type Portfolio = {
     terms?: string;
 } & MicroCMSListContent;
 
-export type Category = {
-    name: string;
-} & MicroCMSListContent;
-
 export type News = {
     id: string;
     title: string;
     description: string;
     content: string;
     thumbnail?: MicroCMSImage;
-    category: Category;
 } & MicroCMSListContent;
 
 
@@ -90,15 +85,6 @@ export const getNewsDetail = async (contentId: string, queries?: MicroCMSQueries
                 revalidate: queries?.draftKey === undefined ? 60 : 0,
             },
         },
-    });
-    return detailData;
-};
-
-export const getCategoryDetail = async (contentId: string, queries?: MicroCMSQueries) => {
-    const detailData = await client.getListDetail<Category>({
-        endpoint: "categories",
-        contentId,
-        queries,
     });
     return detailData;
 };
